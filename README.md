@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Curso de React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido durante um curso de React, com o objetivo de **aprendizado e prática** dos conceitos fundamentais da biblioteca (componentes, hooks, roteamento, tipagem com TypeScript, etc.). Não tem fins comerciais.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+É um **gerenciador de tarefas** simples, que permite:
 
-## Expanding the ESLint configuration
+- Adicionar novas tarefas (título e descrição)
+- Marcar tarefas como concluídas
+- Remover tarefas
+- Visualizar os detalhes de uma tarefa em uma página separada
+- Persistir as tarefas no `localStorage` do navegador (os dados continuam salvos após recarregar a página)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- [React](https://react.dev/) 18
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/) para navegação entre páginas
+- [Tailwind CSS](https://tailwindcss.com/) para estilização
+- [lucide-react](https://lucide.dev/) para ícones
+- [uuid](https://www.npmjs.com/package/uuid) para geração de IDs únicos
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Estrutura do projeto
+
+```
+src/
+├── components/   # Componentes reutilizáveis (Button, Input, Title, Tasks, AddTask)
+├── pages/        # Páginas da aplicação (TaskPage)
+├── App.tsx       # Componente principal, com a lógica de estado das tarefas
+├── types.ts      # Tipos TypeScript compartilhados
+└── main.tsx      # Ponto de entrada da aplicação
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Como rodar o projeto
+
+Pré-requisitos: [Node.js](https://nodejs.org/) instalado.
+
+```bash
+# instalar as dependências
+npm install
+
+# rodar em modo de desenvolvimento
+npm run dev
+
+# gerar build de produção
+npm run build
+
+# rodar o lint
+npm run lint
+```
+
+A aplicação ficará disponível em `http://localhost:5173` (porta padrão do Vite).
+
+## Licença
+
+Este projeto está sob a licença MIT — veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
