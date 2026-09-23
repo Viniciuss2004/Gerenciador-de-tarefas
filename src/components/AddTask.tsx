@@ -3,9 +3,10 @@ import Input from "./Input.tsx";
 
 interface AddTaskProps {
   onAddTaskSubmit: (title: string, description: string) => void;
+  onError: (message: string) => void;
 }
 
-function AddTask({ onAddTaskSubmit }: AddTaskProps) {
+function AddTask({ onAddTaskSubmit, onError }: AddTaskProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -17,7 +18,7 @@ function AddTask({ onAddTaskSubmit }: AddTaskProps) {
     description: string;
   }) {
     if (!title.trim() || !description.trim()) {
-      alert("Preencha os campos titulo e descrição");
+      onError("Preencha os campos titulo e descrição");
       return false;
     }
     return true;
